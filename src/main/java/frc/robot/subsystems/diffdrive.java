@@ -69,8 +69,22 @@ public class diffdrive extends SubsystemBase{
         rightLeader.set(rightSpeed);
     }
 
-    //plan to make encoders here idk?
-
-
+    //encoder things
+    public void resetEncoders() {
+        leftLeader.setPosition(0);
+        rightLeader.setPosition(0);
+    }
+    public double getLeftLeaderPosition() {
+        return leftLeader.getPosition().getValueAsDouble();
+    }
+    public double getRightLeaderPosition() {
+        return rightLeader.getPosition().getValueAsDouble();     
+    }
+    public double getRightLeaderVelocity(){
+        return rightLeader.getVelocity().getValueAsDouble(); 
+    }
+    public double getLeftLeaderVelocity(){
+        return leftLeader.getVelocity().getValueAsDouble();     
+    }
 }
 
