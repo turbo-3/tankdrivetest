@@ -17,8 +17,8 @@ public final class Constants {
     public static final int kDriverControllerPort = 0;
   }
 
-public static final int LLPORT = 0;
-public static final int LFPORT = 0;
-public static final int RLPORT = 0;
-public static final int RFPORT = 0;
+public static final int LLPORT = 1;
+public static final int LFPORT = 2;
+public static final int RLPORT = 3;
+public static final int RFPORT = 4;
 }
