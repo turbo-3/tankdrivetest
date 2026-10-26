@@ -54,7 +54,7 @@ public class diffdrive extends SubsystemBase{
         leftFollowerConfig.CurrentLimits.SupplyCurrentLimitEnable = true;
 
         leftFollower.getConfigurator().apply(leftFollowerConfig);
-        leftFollower.setControl(new Follower(Constants.LFPORT, MotorAlignmentValue.Aligned));
+        leftFollower.setControl(new Follower(Constants.LLPORT, MotorAlignmentValue.Aligned));
 
         rightFollowerConfig.CurrentLimits.StatorCurrentLimit = 40;
         rightFollowerConfig.CurrentLimits.SupplyCurrentLimit = 40;
@@ -62,7 +62,7 @@ public class diffdrive extends SubsystemBase{
         rightFollowerConfig.CurrentLimits.SupplyCurrentLimitEnable = true;
 
         rightFollower.getConfigurator().apply(rightFollowerConfig);
-        rightFollower.setControl(new Follower(Constants.RFPORT, MotorAlignmentValue.Aligned));
+        rightFollower.setControl(new Follower(Constants.RLPORT, MotorAlignmentValue.Aligned));
     }
     public void tankdrive(double leftSpeed, double rightSpeed) {
         leftLeader.set(leftSpeed);
@@ -70,7 +70,7 @@ public class diffdrive extends SubsystemBase{
     }
 
     //plan to make encoders here idk?
-    
+
 
 }
 
