@@ -7,9 +7,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import com.ctre.phoenix6.hardware.TalonFX;
-import edu.wpi.first.wpilibj.PS5Controller;
-import edu.wpi.first.wpilibj.PS4Controller;
+import frc.robot.subsystems.diffdrive;
 import edu.wpi.first.wpilibj.XboxController;
 
 /**
@@ -21,7 +19,8 @@ public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
 
   private final RobotContainer m_robotContainer;
-
+  diffdrive drivetrain = new diffdrive();
+  XboxController controller1 = new XboxController(0);
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -83,7 +82,9 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during operator control. */
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic() {
+    drivetrain.tankdrive(controller1.getLeftX(), controller1.getLeftY());
+  }
 
   @Override
   public void testInit() {
